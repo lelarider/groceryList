@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Creating Grocery List</title>
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="item" type="text" class="ghost-input" placeholder="Enter a grocery item">
+          <input name="department" type="text" class="ghost-input" placeholder="Enter a grocery department">
+          <input type="submit" class="ghost-button" value="Add item", name='continue'>
+          <input type="submit" class="ghost-button" value="All done!", name='complete'>
+        </form>
+        <% if (item !== null) { %>
+          <p><%= item %></p>
+          <% } %>
+          <ul>
+            <% gList.forEach(listItem => { %>
+            <li><%= listItem['item'] %>: <%= listItem['department'] %></li>
+            <% }); %>
+          <ul>
+      </fieldset>
+    </div>
+  </body>
+</html>
